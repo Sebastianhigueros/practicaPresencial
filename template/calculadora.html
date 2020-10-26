@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+	background-color: Grey;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+}
+
+ #Primer{
+	font-family: Arial;
+	font-size: 20px;
+}
+
+#Segundo {
+	font-family: Arial;
+	font-size: 20px;
+}
+
+#res {
+	font-family: Arial;
+	font-size: 20px;
+}
+
+#resta {
+	background-color: black;
+	color: white;
+}
+#multiplicacion {
+	background-color: black;
+	color: white;
+}
+#division {
+	background-color: black;
+	color: white;
+}
+#potencia {
+	background-color: black;
+	color: white;
+}
+#raiz {
+	background-color: black;
+	color: white;
+}
+#historial{
+	font-family: Arial;
+	font-size: 20px;
+}
+#Historial{
+	font-family: Arial;
+	font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Calculadora</h1>
+
+<form >
+	<label id = "Primer" for = "numero1">Primer Numero:</label>
+	<input type="number" id= "numero1" name="numero1">
+	<label id = "Segundo" for = "numero2">Primer Numero:</label>
+	<input type="number" id= "numero2" name="numero2"><br><br>
+	<label id = "res" for = "Resultado"> Resultado:</label>
+	<output id = "Resultado" for ="numero1 numero2"></output><br><br>
+</form>
+
+
+<form>
+	<button id = "suma" type ="submit" value = "Submit">+</button>
+	<button id = "resta" type ="submit" value = "Submit">-</button>
+	<button id = "multiplicacion" type ="submit" value = "Submit">*</button>
+	<button id = "division" type ="submit" value = "Submit">/</button><br><br>
+	<button id = "potencia" type ="submit" value = "Submit">^</button>
+	<button id = "raiz" type ="submit" value = "Submit">RAIZ</button>
+</form>	
+
+<form>
+	<label id = "historial" for = "Historial"> Historial:</label><br>
+	<textarea id = "Historial"></textarea>
+</form>	
+
+<script >
+	function suma(){
+		fetch('http:localhost:500/suma',{ 
+			method : 'POST',
+
+	}).then(res => res.json())
+	.catch(err => {
+		console.log(err)
+		alert('ocurrio un error')
+	}).then(respuesta =>{
+		var numero1 = document.getElementById("numero1")
+		var numero2 = document.getElementById("numero2")
+	} )
+
+
+	}
+
+</script>
+
